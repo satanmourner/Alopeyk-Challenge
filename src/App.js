@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Header from './components /Header';
+import Section from './components /Section';
+import Footer from './components /Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {total: 0, totalPrice: 0}
+    this.countTotal = this.countTotal.bind(this);
+  }
+
+  countTotal = (total, totalPrice) => {
+    var newTotal = total;
+    var newTotalPrice = totalPrice;
+    this.setState({total: newTotal, totalPrice: newTotalPrice});
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="container">
+        <Header />
+        <Section total={this.countTotal} />
+        </div>
+        <Footer total={this.state.total} totalPrice={this.state.totalPrice} />
+      </div>
+    );
+  }
 }
 
 export default App;

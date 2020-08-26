@@ -1,3 +1,7 @@
+This project Created by Sanaz Mahmoudi 
+it is not completed(some styles), but all algorithms are implemented. 
+
+/************************************************************************************************/
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
