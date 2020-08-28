@@ -15,7 +15,6 @@ export default class Section extends React.Component {
 
   addItem = (index) => {
     cards[index].many += 1;
-    this.setState({total: this.state.total.concat(cards[index].many)});
     count[index] = cards[index].many;
     countPrice[index] = cards[index].many * cards[index].price;
   }
@@ -23,7 +22,6 @@ export default class Section extends React.Component {
   removeItem = (index) => {
     if(cards[index].many > 0) 
       cards[index].many -= 1;
-    this.setState({total: this.state.total.concat(cards[index].many)});
     count[index] = cards[index].many;
     countPrice[index] = cards[index].many * cards[index].price;
   }
